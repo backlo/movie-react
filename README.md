@@ -1,16 +1,19 @@
 # React 스터디 저장소
 
-리액트 스터디 저장소 입니다. 노마드 코더 강의 기준으로 정리합니다. :)
+리액트 스터디 저장소 입니다. 노마드코더 강의 기준으로 정리하여 올리겠습니다. :)
 
 
 ## 목차 
-1. [React 소개](#react-소개)
-2. [Angular vs React vs Vue](#angular-vs-react-vs-vue)
-3. [ES6란?](#es6)
-4. [Webpack](#webpack)
-5. [JSX](#jsx)
-6. [React vs React DOM](#react-vs-react-dom)
-7. [State vs Props](#state-vs-props)
+1. React란?
+    1. [React 소개](#react-소개)
+    2. [Angular vs React vs Vue](#angular-vs-react-vs-vue)
+    3. [Why React?](#why-react?)
+2. React에 대하여
+    1. [ES6란?](#es6)
+    2. [Webpack](#webpack)
+    3. [JSX](#jsx)
+    4. [React vs React DOM](#react-vs-react-dom)
+    5. [State vs Props](#state-vs-props)
 
 ## React 소개
 * 컴포넌트라는 개념이 집중되어 있는 라이브러리
@@ -37,10 +40,18 @@
 * 위에 설명 참고
 
 #### Vue
-* Cdn으로 불러와서 사용
+* CDN으로 불러와서 사용
 * Html같은 템플릿을 사용
 * Markup이나 Publisher가 있으면 작업 흐름이 쉬운편
 * Angular 디렉터 + react virtual 컴포넌트 기능이 혼합된 라이브러리
+
+## Why React?
+* 지속해서 데이터가 변화하는 대규모 애플리케이션을 구축하기 위해 리엑트를 만듬
+    * 특정 이벤트가 발생했을 때 모델의 변화를 일으키고 그 변화에 따라 어떤 DOM을 가지고 와서 어떻게 업데이트를 해야 할지 생각함
+    * 즉 데이터가 바뀌면 바뀐 부분만 비교하여 view를 랜더링 시킴
+    * 이러면 바뀐 데이터만 랜더링 시키기 때문에 성능이 향상
+* React와 옛 라이브러리들의 공통점은 Model
+    * 옛 라이브러리들은 MVC, MVVM, MVW등 이러한 패턴을 사용
 
 
 ## ES6
@@ -113,6 +124,9 @@
     * 링크 : [https://webpack.js.org](https://webpack.js.org)
 * 코드들을 의존하는 순서대로 잘 합쳐서 하나 또는 여러개의 파일로 결과를 만듬
     * ex) 이미지 파일을 웹팩을 통해 png파일로 변경
+    * 이때 하는 작업을 bundling작업이라 부름
+    * bundling 작업을 할 때 확장자마다 어떠한 처리 작업을 하도록 준비해준다.
+    * 즉 import 할때 연결된 파일을 불러와 저장한다.
 * create-react-app
     * 웹팩과 같은 툴을 사용할 필요 없이 손쉽게 리액트를 만들어 주는 툴
     * 웹팩 파일이 숨어있는 셈
@@ -129,4 +143,4 @@
     * 리액트 사용해서 웹에 올릴경우 React Dom
     * 리액트를 모바일 환경에서 올릴경우 React Native
 
-## state vs props
+## State vs Props
