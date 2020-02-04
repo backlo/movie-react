@@ -7,7 +7,7 @@
 1. React란?
     1. [React 소개](#react-소개)
     2. [Angular vs React vs Vue](#angular-vs-react-vs-vue)
-    3. [Why React?](#why-react?)
+    3. [Why React?](#why-react)
 2. React에 대하여
     1. [ES6란?](#es6)
     2. [Webpack](#webpack)
@@ -44,6 +44,7 @@
 * Html같은 템플릿을 사용
 * Markup이나 Publisher가 있으면 작업 흐름이 쉬운편
 * Angular 디렉터 + react virtual 컴포넌트 기능이 혼합된 라이브러리
+
 
 ## Why React?
 * 지속해서 데이터가 변화하는 대규모 애플리케이션을 구축하기 위해 리엑트를 만듬
