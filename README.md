@@ -53,7 +53,7 @@
     * 이러면 바뀐 데이터만 랜더링 시키기 때문에 성능이 향상
 * React와 옛 라이브러리들의 공통점은 Model
     * 옛 라이브러리들은 MVC, MVVM, MVW등 이러한 패턴을 사용
-* 모든 회사에서 대부분 React 사용
+* 많은 회사에서 React 사용
     * FaceBook
     * Airbnb
     * Google
@@ -126,7 +126,7 @@
     >
     ```
 
-## Webpack
+## Webpack 
 * 리액트 코드를 브라우저가 이해할 수 있는 코드로 변경해주는 역할, 툴
     * 링크 : [https://webpack.js.org](https://webpack.js.org)
 * 코드들을 의존하는 순서대로 잘 합쳐서 하나 또는 여러개의 파일로 결과를 만듬
@@ -138,6 +138,9 @@
     * 웹팩과 같은 툴을 사용할 필요 없이 손쉽게 리액트를 만들어 주는 툴
     * 웹팩 파일이 숨어있는 셈
     * 즉 편리하게 작업하기 위한 툴
+    * 명령어
+        * ``npx create-react-app [앱 이름]`` 앱 생성
+        * ``npm start`` npm 시작
 
 ## JSX
 * 리액트로 HTML을 사용하는 JavaScript 확장 문법

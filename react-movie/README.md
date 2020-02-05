@@ -1,5 +1,5 @@
-# React-Movie
-영화 예매 서비스 React View
+# React Movie App
+영화 예매 서비스 React View - (2020 update)
 
 ## 영화 리스트 컴포넌트
 
