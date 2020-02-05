@@ -193,7 +193,7 @@ class App extends Component {
     * 속성을 틀리게 할 경우 등 찾아서 확인 해줌
     * 즉 검증 모듈
 
-    ```
+    ``` es6
     Food.propTypes = {
         name: PropTypes.string.isRequired, // name이 String 타입인지
         picture: PropTypes.string.isRequired, // picture가 String 타입인지
