@@ -53,7 +53,13 @@
     * 이러면 바뀐 데이터만 랜더링 시키기 때문에 성능이 향상
 * React와 옛 라이브러리들의 공통점은 Model
     * 옛 라이브러리들은 MVC, MVVM, MVW등 이러한 패턴을 사용
-
+* 모든 회사에서 대부분 React 사용
+    * FaceBook
+    * Airbnb
+    * Google
+    * NetFlix
+    * Spotify
+    * Slack...
 
 ## ES6
 * 최근에 나온 자바스크립트 버전
