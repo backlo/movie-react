@@ -13,7 +13,9 @@
     2. [Webpack](#webpack)
     3. [JSX](#jsx)
     4. [React vs React DOM](#react-vs-react-dom)
-    5. [State vs Props](#state-vs-props)
+    5. [Props vs State](#state-vs-props)
+        1. [Props](#props)
+        2. [State](#State)
 
 ## React 소개
 * 컴포넌트라는 개념이 집중되어 있는 라이브러리
@@ -159,7 +161,7 @@
 
 ## State vs Props
 
-#### Props
+### Props
 * 컴포넌트의 정보를 가저오는 방법
 * 동적으로 rendering하는 방법
     * javascript map 사용!
@@ -200,3 +202,5 @@ class App extends Component {
         rating: PropTypes.number.isRequired // rating가 number 타입인지
     }
     ```
+
+    ### State
