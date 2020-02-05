@@ -20,6 +20,7 @@
     * 프레임워크가 아니다!!!
 * JavaScript + 약간의 HTML
 * 데이터를 넣으면 우리가 지정한 인터페이스를 조립해서 보여줌
+    * 빈 Html을 보여준 후 React가 컴포넌트를 조립해서 해당 Html에 조립해서 보여준다
 * React는 View이기 때문에 원하는데에서 사용할 수 있는 장점
     * React + Spring Boot
     * React + Ruby on Rails
@@ -144,6 +145,9 @@
 
 ## JSX
 * 리액트로 HTML을 사용하는 JavaScript 확장 문법
+* ex) ``ReactDOM.render(<App />, document.getElementById('root'))`` JSX의 형태
+    * ``ReactDOM.render(<App /> < App2/>, document.getElementById('root'))`` -> 하나의 컴포넌트만 랜더링 시키기 때문에 오류 발생
+    * 따라서 2개 이상 컴포넌트를 랜더링 시킬 때 한개 컴포넌트 안에 다른 컴포넌트를 집어 넣어야 함
 * 두개 이상의 태그 일 경우 ``<div>`` 태그로 닫음
     * Fragment 모듈을 사용하면 ``<div>`` 태그 사용 안해도 됨
 
@@ -154,3 +158,45 @@
     * 리액트를 모바일 환경에서 올릴경우 React Native
 
 ## State vs Props
+
+#### Props
+* 컴포넌트의 정보를 가저오는 방법
+* 동적으로 rendering하는 방법
+    * javascript map 사용!
+* props를 사용할 땐 id 즉 unique key가 필요하다
+    * 겉으로는 상관없지만 react 내부상 unique key가 필요하기 때문에 id를 적어주는 것이 중요
+* 예시
+``` es6
+function Food({ fav }) {            // function Food(props) {
+    return <h1> I like {fav} </h1>; // return <h1> I like {props.fav} </h1> } 이렇게 변경 가능
+}
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Food fav="kimchi" />
+        <Food fav="Ramen" />
+        <Food fav="samgiopsal" />
+        <Food fav="chukumi" />
+        <Movie />
+      </div>
+    );
+  }
+}
+```
+* 결과
+![props-result](./images/props-result.png)
+
+* props-types
+    * 전달받은 props가 자신이 원하는 props 인지 확인하는 모듈
+    * 속성을 틀리게 할 경우 등 찾아서 확인 해줌
+    * 즉 검증 모듈
+
+    ```
+    Food.propTypes = {
+        name: PropTypes.string.isRequired, // name이 String 타입인지
+        picture: PropTypes.string.isRequired, // picture가 String 타입인지
+        rating: PropTypes.number.isRequired // rating가 number 타입인지
+    }
+    ```
