@@ -16,6 +16,7 @@
     5. [Props vs State](#state-vs-props)
         1. [Props](#props)
         2. [State](#State)
+    6. [React LifeCycle](#react-lifecycle)
 
 ## React 소개
 * 컴포넌트라는 개념이 집중되어 있는 라이브러리
@@ -163,6 +164,7 @@
 
 ### Props
 * 컴포넌트의 정보를 가저오는 방법
+* 부모 컴포넌트가 자식 컴포넌트한테 값을 전달 할 때 사용
 * 동적으로 rendering하는 방법
     * javascript map 사용!
 * props를 사용할 땐 id 즉 unique key가 필요하다
@@ -212,7 +214,8 @@ class App extends Component {
         * State라는 Object를 사용해야하기 때문에
     
 * State
-    * 데이터를 자유자재로 바꾸기 위해 사용
+    * 데이터를 자유자재로 변경하기 위해 사용
+    * 값이 바뀌면 Rerandering
     
     ```es6
     state = {
@@ -237,7 +240,7 @@ class App extends Component {
         );
     }
     ```
-    
+
     * state는 직접 변경하면 안됌
         * 이유는 새로운 state와 render function이 호출 하지 않음
         * setState를 통해 변경 가능
@@ -262,3 +265,45 @@ class App extends Component {
         * 직접 외부 데이터를 건들기 때문에
     * 외부의 상태에 의존하지 않는 것이 가장 좋기 때문에 함수형으로 프로그래밍을 하는 것이 좋다!
 
+## React LifeCycle
+React의 생명 주기
+
+### Mounting
+* 컴포넌트가 브라우저 상에 나타날 때
+* **constructor()**
+    * Javascript가 class를 만들 때 호출
+    * 가장 먼저 실행
+* getDerivedStateFromPorps()
+    * 잘 사용하지 않음
+    * props에 받은 값을 state에 동결 시킬 때 사용
+    * 업데이팅 과정에서 props가 바뀔 때 실행
+* **render()**
+    * 브라우저 화면에 rendering 될 때
+    * 어떤 DOM을 만들게 될지, 어떤 태그를 나타내면 되는지 등
+* **componentDidMount()**
+    * render 하고 나서 componentDidMount 호출
+    * 컴포넌트가 나타나고 그 뒤에 어떤 것을 하고 싶다 할 때 사용
+
+### Updating
+* 컴포넌트의 props나 state가 바뀔 때
+* getDerivedStateFromProps()
+    * 사용 잘 안함
+* shouldCompponentUpdate()
+    * 업데이트를 할지 말지 정하는 부분 
+    * 컴포넌트가 업데이트 되는 성능을 최적화 시키고 싶을 때 사용
+    * 부모 컨포넌트가 Rerandering이 되면 부모 컴포넌트의 자식 컴포넌트들도 랜더링 함수 실행
+        * 이때 rerandering하면 virtual Dom에 들어가 실행
+        * 이렇기 때문에 virtual Dom조차 하기 싫을 경우 이 함수 사용 
+* **render()**
+* getSnapshotBeforeUpdate()
+    * 거의 사용 안함
+    * 랜더링을 하고나서 업데이트 하기 전 즉 브라우저 호출 직전 하고 싶은 작업 할 때
+    * ex) 스크롤을 유지하고 싶을 때
+* **componentDidUpdate()**
+    * state가 바뀔때 이전의 상태와 지금의 상태가 바뀌는 시점에서 작업을 하고 싶을 때 호출
+
+### Unmounting
+* 죽는 것을 의미
+* **componentWillUnmount()**
+    * component가 죽을 때 호출
+    * ex) 페이지가 나가거나 할 때
