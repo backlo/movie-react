@@ -237,25 +237,14 @@ class App extends Component {
         );
     }
     ```
-
+    
     * state는 직접 변경하면 안됌
         * 이유는 새로운 state와 render function이 호출 하지 않음
         * setState를 통해 변경 가능
             * setState를 부르는 순간 react는 render Function을 한번 더 호출
             * 이로써 react는 변경된 부분만 변경
 
-    * 직접 부르는 것과 function식으로 사용하는 것과의 차이
-
-    ``` es6
-        // 직접 state 호출
-        add = () => {
-            this.setState({count : this.state.count + 1});
-        };
-
-        minus = () => {
-            this.setState({count : this.state.count - 1});
-        };count : this.state.count - 1 }));
-    ```
+    * 직접 state 호출 vs function으로 state 호출
 
     ``` es6
         // functional로 state 호출
@@ -263,6 +252,7 @@ class App extends Component {
             this.setState(current => ({ count : current.count + 1 }));
         };
 
+        // 직접 state 호출
         minus = () => {
             this.setState(current => ({ count : this.state.count - 1 }));
         };
