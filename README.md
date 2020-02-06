@@ -271,7 +271,7 @@ React의 생명 주기
 ### Mounting
 * 컴포넌트가 브라우저 상에 나타날 때
 * **constructor()**
-    * Javascript가 class를 만들 때 호출
+    * Javascript가 class를 만들 때 호출
     * 가장 먼저 실행
 * getDerivedStateFromPorps()
     * 잘 사용하지 않음
@@ -303,7 +303,7 @@ React의 생명 주기
     * state가 바뀔때 이전의 상태와 지금의 상태가 바뀌는 시점에서 작업을 하고 싶을 때 호출
 
 ### Unmounting
-* 죽는 것을 의미
+* 컴포넌트가 브라우저 상에서 사라질 때 
 * **componentWillUnmount()**
     * component가 죽을 때 호출
     * ex) 페이지가 나가거나 할 때
