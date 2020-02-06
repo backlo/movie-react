@@ -191,9 +191,9 @@ class App extends Component {
 ![props-result](./images/props-result.png)
 
 * props-types
-    * 전달받은 props가 자신이 원하는 props 인지 확인하는 모듈
+    * 전달받은 props가 자신이 원하는 props 인지 확인하는 라이브러리
     * 속성을 틀리게 할 경우 등 찾아서 확인 해줌
-    * 즉 검증 모듈
+    * 즉 검증 라이브러리
 
     ``` es6
     Food.propTypes = {
@@ -203,4 +203,71 @@ class App extends Component {
     }
     ```
 
-    ### State
+### State
+* Function Component vs Class Component
+    * Function Component는 return을 하고 screen에 표시
+    * Class Component는 react Component로 부터 확장하고 screen에 표시
+        * react는 자동적으로 class component의 render method를 자동으로 실행
+    * Class Component를 사용해야하는 이유?
+        * State라는 Object를 사용해야하기 때문에
+    
+* State
+    * 데이터를 자유자재로 바꾸기 위해 사용
+    
+    ```es6
+    state = {
+        count : 0
+    };
+
+    add = () => {
+        this.setState({count : this.state.count + 1});
+    };
+
+    minus = () => {
+        this.setState({count : this.state.count - 1});
+    };
+    
+
+    render() {
+        return (
+            <div className="App">
+                <h1> The number is : {this.state.count}</h1>
+                <button onClick={this.add}> Add </button>
+                <button onClick={this.minus}> Minus </button>
+            </div>
+        );
+    }
+    ```
+
+    * state는 직접 변경하면 안됌
+        * 이유는 새로운 state와 render function이 호출 하지 않음
+        * setState를 통해 변경 가능
+            * setState를 부르는 순간 react는 render Function을 한번 더 호출
+            * 이로써 react는 변경된 부분만 변경
+
+    * 직접 부르는 것과 function식으로 사용하는 것과의 차이
+    
+    ``` es6
+        add = () => {
+            this.setState(current => ({ count : current.count + 1 }));
+        };
+
+        minus = () => {
+            this.setState(current => ({ count : this.state.count - 1 }));
+        };
+    ```
+
+    ``` es6
+        add = () => {
+            this.setState(current => ({ count : current.count + 1 }));
+        };
+
+        minus = () => {
+            this.setState(current => ({ count : this.state.count - 1 }));
+        };
+    ```
+
+    * 직접 부르면 성능에 이슈가 발생
+        * 직접 외부 데이터를 건들기 때문에
+    * 외부의 상태에 의존하지 않는 것이 가장 좋기 때문에 함수형으로 프로그래밍을 하는 것이 좋다!
+
