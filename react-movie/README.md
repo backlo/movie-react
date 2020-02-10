@@ -22,3 +22,5 @@
 ## 기타
 * html class는 Jsx에서 ClassName
     * class나 className이나 같지만 react애서는 class로 만들기 때문에 className으로 속성을 선언해야함
+* javascript로 문자열 자르기
+    * ``{summary.slice(0, 180)}`` //0부터 180글자 까지 보여준다.
