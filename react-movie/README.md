@@ -43,6 +43,11 @@
 * 빠르게 페이지를 보여준다.
 * Link를 사용할 경우 router 안에 있어야 한다.
 
+## Redux
+* state를 스크린 밖에 있도록 도와주는 용도
+    * 원래 state 밖에 있으면 다시 랜더링 시켜 성능 저하
+* 즉 redux가 state를 저장시켜 페이지를 바뀌어도 다시 불러올 때 redux가 가지고 있는 state를 불러온다.
+
 ## 기타
 * html class는 Jsx에서 ClassName
     * class나 className이나 같지만 react애서는 class로 만들기 때문에 className으로 속성을 선언해야함
