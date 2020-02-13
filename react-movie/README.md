@@ -19,6 +19,30 @@
     * 좀 더 깔끔하게 보여줄 수 있음
     * 비동기 처리 콜백 함수
 
+## React Hook
+* state를 가지기 위해서 더이상 class component가 필요없음 
+* class component 방식을 다른 방식으로 일함
+* 전혀 다른 구조
+
+## Router
+* React navigation
+* Home, Menu등 페이지에 배치하기 위해 사용
+* 심플한 리액트 컴포넌트
+    * ``/home -> Home.js으로 보내주는 역할``
+    * ex) * ``<Route path="/about" component={About}/>`` // /about에 가면 About.js 보여주는 코드
+* Router에도 종류가 있음
+    * HashRouter
+    * Router
+    * BrowserRouter -> github page 설정하기 어려움
+* exact
+    * path가 중복으로 들어올때 그 path형식만 아니면 랜더링 안한다는 뜻
+* Router안에 모든 component를 넣을 필요가 없다
+    
+## Link
+* 새롭게 랜더링 시키는게 아니라 기존 페이지를 부름
+* 빠르게 페이지를 보여준다.
+* Link를 사용할 경우 router 안에 있어야 한다.
+
 ## 기타
 * html class는 Jsx에서 ClassName
     * class나 className이나 같지만 react애서는 class로 만들기 때문에 className으로 속성을 선언해야함
